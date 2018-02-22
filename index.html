@@ -41,6 +41,25 @@ gender = unescape(params["gender"]);
 pan = unescape(params["pan"]);
 panid = unescape(params["panid"]);
 mobile = unescape(params["mobileno"]);
+password = unescape(params["password"]);
+pg1 = unescape(params["pg1"]);
+pg2 = unescape(params["pg2"]);
+ug1 = unescape(params["ug1"]);
+ug2 = unescape(params["ug2"]);
+sc1 = unescape(params["sc1"]);
+sc2 = unescape(params["sc2"]);
+experience = unescape(params["exp"]);
+ps = unescape(params["ps"]);
+ss = unescape(params["ss"]);
+cc = unescape(params["cc"]);
+ec = unescape(params["ec"]);
+reason = unescape(params["reason"]);
+notice = unescape(params["notice"]);
+cl = unescape(params["cl"]);
+pl = unescape(params["pl"]);
+sn = unescape(params["e3"]);
+
+
 function html5_storage_support() {
   		//check to see if this browser support local storage: return true if so, false if not
 		try {
@@ -52,7 +71,7 @@ function html5_storage_support() {
 	if (html5_storage_support()) {
   			//get the user-entered values from the two text fields:
   			
-        var arr = {n1:firstname,n2:lastname,n3:emailid,n4:dob,n5:gender,n6:pan,n7:panid,n8:mobile};
+        var arr = {n1:firstname,n2:lastname,n3:emailid,n4:dob,n5:gender,n6:pan,n7:panid,n8:mobile,n9:password,n10:pg1,n11:pg2,n12:ug1,n13:ug2,n14:sc1,n15:sc2,n16:experience,n17:ps,n18:ss,n19:cc,n20:ec,n21:reason,n22:notice,n23:cl,n24:pl,n25:sn};
   			//create two local-storage keys (name1, name2) and assign
   			//each the respective value from the text fields:
   			users = JSON.parse(localStorage.getItem("users") || "[]");
@@ -62,24 +81,35 @@ function html5_storage_support() {
   		}
 function func()
 {var x = document.getElementById("username").value; var flag=0;
+var y = document.getElementById("password").value; 
 users = JSON.parse(localStorage.getItem("users") || "[]");
 for(i=1;i<users.length;i++)
 {
-if(users[i].n1 == x)
+if(users[i].n3 == x && users[i].n9 == y)
 {
+  document.getElementById("container").innerHTML = "";
   flag=1;
   for(j=1;j<users.length;j++)
   {
     if(users[j].n1!=="undefined" && users[j].n2!=="undefined" && users[j].n3!=="undefined" && users[j].n4!=="undefined" && users[j].n5!=="undefined" && users[j].n6!=="undefined" && users[j].n7!=="undefined" && users[j].n8!=="undefined"){
-    document.getElementById("show").innerHTML+= "Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3;
-    document.getElementById("show").innerHTML+= "DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+users[j].n6+":"+users[j].n7+"Mobile: "+users[j].n8;}
+    document.getElementById("show").innerHTML+= "<br>"+"Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3;
+    document.getElementById("show").innerHTML+="<br>"+"DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+"Mobile: "+users[j].n8;
+    document.getElementById("show").innerHTML+="<br>"+"Educational qualification:"+"<br>"+"PG  Percentage:"+users[j].n10+"year: "+users[j].n11;
+    document.getElementById("show").innerHTML+="<br>"+"UG Percentage:"+users[j].n12+"year: "+users[j].n13+"<br>"+"Higher Secondary Percentage:";
+    document.getElementById("show").innerHTML+=users[j].n14+"year"+users[j].n15+"<br>"+"Experience:"+users[j].n16+"PrimarySkills:"+users[j].n17;
+    document.getElementById("show").innerHTML+="<br>"+"Secondary Skills:"+users[j].n18+"<br>"+"Current ctc:"+users[j].n19+"<br>";
+    document.getElementById("show").innerHTML+="Expected ctc:"+users[j].n20+"<br>"+"Reason:"+users[j].n21+"<br>"+"Notice Period:"+users[j].n22;
+    document.getElementById("show").innerHTML+="<br>"+"Serving Notice:"+users[j].n23+"<br>"+"Current Location:"+users[j].n24+"<br>";
+    document.getElementById("show").innerHTML+="Preferred Location:"+users[j].n25+"<br>"+users[j].n6+":"+users[j].n7+"<br>"+"<br>"+<"br>";
+
+}
 else{j++;}
   }
   }
   if(flag == 1)
   break;
 }
-}
+
 
 
 
