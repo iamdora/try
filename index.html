@@ -41,6 +41,8 @@ gender = unescape(params["gender"]);
 pan = unescape(params["pan"]);
 panid = unescape(params["panid"]);
 mobile = unescape(params["mobileno"]);
+exp = unescape(params["exp"]);
+
 function html5_storage_support() {
   		//check to see if this browser support local storage: return true if so, false if not
 		try {
@@ -52,7 +54,7 @@ function html5_storage_support() {
 	if (html5_storage_support()) {
   			//get the user-entered values from the two text fields:
   			
-        var arr = {n1:firstname,n2:lastname,n3:emailid,n4:dob,n5:gender,n6:pan,n7:panid,n8:mobile};
+        var arr = {n1:firstname,n2:lastname,n3:emailid,n4:dob,n5:gender,n6:pan,n7:panid,n8:mobile,n9:exp};
   			//create two local-storage keys (name1, name2) and assign
   			//each the respective value from the text fields:
   			users = JSON.parse(localStorage.getItem("users") || "[]");
@@ -70,9 +72,10 @@ if(users[i].n1 == x)
   flag=1;
   for(j=1;j<users.length;j++)
   {
-     if(users[j].n1!==null && users[j].n2!==null && users[j].n3!==null && users[j].n4!==null && users[j].n5!==null && users[j].n6!==null && users[j].n7!==null && users[j].n8!==null){
+     if(users[j].n1!==null && users[j].n2!==null && users[j].n3!==null && users[j].n4!==null && users[j].n5!==null && users[j].n6!==null && users[j].n7!==null && users[j].n8!==null && users[j].n9!==null){
     document.getElementById("show").innerHTML+= "Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3;
-    document.getElementById("show").innerHTML+= "DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+users[j].n6+":"+users[j].n7+"Mobile: "+users[j].n8;}
+    document.getElementById("show").innerHTML+= "DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+users[j].n6+":"+users[j].n7+"Mobile: "+users[j].n8+"Experience"+users[j].n9;
+     }
 else{j++;}
   }
   }
