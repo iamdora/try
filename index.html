@@ -11,7 +11,7 @@
 <body>
 
 <div id="container" class="col-xs-6">       
-<input type="text" id="username" name="username">
+<input type="text" id="username" name="username">a
 <input type="password" id="password" name="password">
 <div id="lower">
 <input type="submit" value="Login" onclick="func()">
@@ -83,14 +83,14 @@ function func()
 {var x = document.getElementById("username").value; var flag=0;
 var y = document.getElementById("password").value; 
 users = JSON.parse(localStorage.getItem("users") || "[]");
-for(i=1;i<users.length;i++)
+for(i=0;i<users.length;i++)
 {
-if(users[i].n3 == x && users[i].n9 == y)
+if(users[i].n3 === x && users[i].n9 === y)
 {
-  document.getElementById("container").innerHTML = "";
+  
   flag=1;
-  for(j=1;j<users.length;j++)
-  {
+  for(j=0;j<users.length;j++)
+  
     if(users[j].n1!=="undefined" && users[j].n2!=="undefined" && users[j].n3!=="undefined" && users[j].n4!=="undefined" && users[j].n5!=="undefined" && users[j].n6!=="undefined" && users[j].n7!=="undefined" && users[j].n8!=="undefined"){
     document.getElementById("show").innerHTML+= "<br>"+"Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3;
     document.getElementById("show").innerHTML+="<br>"+"DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+"Mobile: "+users[j].n8;
