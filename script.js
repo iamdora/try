@@ -1,19 +1,10 @@
 // Code goes here
-
 // Code goes here
 
 // Code goes here
 // Code goes here
-// Code goes here
-
-// Code goes here
-// Code goes here
-
-
 function validate()
 { 
-
-   
    if( document.StudentRegistration.textname.value === "" )
    {
      alert( "Please provide your Name!" );
@@ -79,86 +70,6 @@ function validate()
      return false;
    }
    
-  
-   //MOBILENO
-   
-   if( StudentRegistration.mobileno.value === "" )
-            
-   {
-     alert( "Please provide a Mobile No in the format 123." );
-     
-     return false;
-   }
-   
-//PASSWORD 
-if( StudentRegistration.password.value === "" )
-   {
-     alert( "Password can't be empty!" );
-     document.StudentRegistration.password.focus() ;
-     return false;
-   }
-   if (document.StudentRegistration.password.value.match(/^(.{0,7}|[^0-9]*|[^A-Z]*|[a-zA-Z0-9]*)$/))
-        {
-       alert( "Password should consist of min 8 characters including 1 uppercase and 1 symbol" );
-     document.StudentRegistration.password.focus() ;
-    return false;  
-    }
-    
-//CURRENT CTC
-if( StudentRegistration.cc.value === "" )
-   {
-     alert( "Current ctc can't be empty!" );
-     document.StudentRegistration.cc.focus() ;
-     return false;
-   }
-   if (!(StudentRegistration.cc.value.match(/^[-+]?[0-9]+\.[0-9]+$/))) 
-        {
-       alert( "current ctc value should be decimal" );
-     document.StudentRegistration.cc.focus() ;
-    return false;  
-    }
-    
-//EXPECTED CTC
-if( StudentRegistration.ec.value === "" )
-   {
-     alert( "Expected ctc can't be empty!" );
-     document.StudentRegistration.ec.focus() ;
-     return false;
-   }
-   if (!(StudentRegistration.ec.value.match(/^[-+]?[0-9]+\.[0-9]+$/))) 
-        {
-       alert( "expected ctc should be in decimal" );
-     document.StudentRegistration.ec.focus() ;
-    return false;  
-    }
-    
-      //SERVING NOTICE
-if ( ( StudentRegistration.sn[0].checked === false ) && ( StudentRegistration.sn[1].checked === false ) )
-   {
-   alert ( "You have to check yes or no for serving notice" );
-  
-   return false;
-   } 
-   
-   if ( ( StudentRegistration.sn[0].checked === true )  )
-   {
-   document.getElementById("e3").value = StudentRegistration.sn[0].value;
-   } 
-   
-   if ( ( StudentRegistration.sn[1].checked === true )  )
-   {
-   document.getElementById("e3").value = StudentRegistration.sn[1].value;
-   } 
-  
-   
- if( document.StudentRegistration.cl.value === "" )
-   {
-     alert( "Current location can't be empty" );
-     document.StudentRegistration.textname.focus() ;
-     return false;
-   }
-   
-   
    if ( ( StudentRegistration.val[0].checked === false ) && ( StudentRegistration.val[1].checked === false ) && ( StudentRegistration.val[2].checked === false ))
    {
    alert ( "Please choose pan/aadhar/passport" );
@@ -167,53 +78,49 @@ if ( ( StudentRegistration.sn[0].checked === false ) && ( StudentRegistration.sn
    
    if ( ( StudentRegistration.val[0].checked === true ))
    {
-     document.getElementById("e2").value = StudentRegistration.val[0].value;
-     
-    if(!(StudentRegistration.panid.value.match(/^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/)))
+   var x = StudentRegistration.panid.value;
+   var regpan = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
+   if(regpan.test(panVal))
    {
-   alert("Please enter correct Pan number");
-     return false;
+   document.getElementById("e2").value = StudentRegistration.val[0].value;
     }
 
+   else
+    { alert("Please enter correct Pan number");
+     return false;}
    }  
    
    if ( ( StudentRegistration.val[1].checked === true ))
    {
    document.getElementById("e2").value = StudentRegistration.val[0].value;
-   if(!(StudentRegistration.panid.value.match(/^[2-9]{1}[0-9]{11}$/)))
-   { 
-     alert("Please enter correct Adhar number");
-     return false;
-   }
-   
    
    }   
    
    if ( ( StudentRegistration.val[2].checked === true ))
-   {document.getElementById("e2").value = StudentRegistration.val[2].value;
-   
-        if(!(StudentRegistration.panid.value.match(/[a-zA-Z]{1}[0-9]{7}/)))
+   {
+   var regsaid = /[a-zA-Z]{2}[0-9]{7}/;
+   var pass = StudentRegistration.panid.value;
+        if(regsaid.test(pass))
+        {
+            document.getElementById("e2").value = StudentRegistration.val[2].value;
+        }
+        else
         {
             alert("Please enter correct Passport number");
            return false;
         }
-        
    
-   }  
-
-
-//TERMS AND CONDITIONS
-  if( StudentRegistration.agree.checked === false )
+   }   
+   
+  if( document.StudentRegistration.mobileno.value === "" ||
+           isNaN( document.StudentRegistration.mobileno.value) ||
+           document.StudentRegistration.mobileno.value.length != 10 )
    {
-     alert( "Agree to terms and conditions" );
+     alert( "Please provide a Mobile No in the format 123." );
+     document.StudentRegistration.mobileno.focus() ;
      return false;
    }
-   
-   
-   
-  
    return( true );
 }
-
 
 
