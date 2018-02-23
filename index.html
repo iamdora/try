@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Registration Form</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,15 +10,18 @@
 </head>
 <body>
 
-<div id="container" class="col-xs-6">       
-<input type="text" id="username" name="username">
-<input type="password" id="password" name="password">
+<div id="container" class="col-xs-6"> 
+<form class="form-signin">       
+      <h2 class="form-signin-heading">Please login</h2>
+<input type="text" id="username" name="username" class="form-control" placeholder="Email Address">
+<input type="password" id="password" name="password" class="form-control" placeholder="Password">
 <div id="lower">
-<input type="submit" value="Login" onclick="func()">
-<a href="s5.html" class="btn btn-default">Register</a>
+<input type="submit" value="Login" class="btn btn-lg btn-primary btn-block" onclick="func()">
+<a href="s5.html" class="btn btn-lg btn-primary btn-block" >Register</a>
 </div><!--/ lower-->
-<div id="show" ></div>
+</form>
 </div>
+<div id="show" ></div>
 <script LANGUAGE="JavaScript">
 function getParams(){
 var idx = document.URL.indexOf('?');
@@ -94,7 +97,7 @@ if(users[i].n3 == x && users[i].n9 == y)
   {
      if(users[j].n1!==null && users[j].n2!==null && users[j].n3!==null && users[j].n4!==null && users[j].n5!==null && users[j].n6!==null && users[j].n7!==null && users[j].n8!==null && users[j].n9!==null && users[j].n10!==null && users[j].n11!==null && users[j].n12!==null && users[j].n13!==null && users[j].n14!==null && users[j].n15!==null && users[j].n16!==null && users[j].n17!==null && users[j].n18!==null && users[j].n19!==null && users[j].n20!==null && users[j].n21!==null && users[j].n22!==null && users[j].n23!==null && users[j].n24!==null && users[j].n25!==null)
      {
-    document.getElementById("show").innerHTML+= "<br>"+"REGISTERED USER NO:"+j+1+"<br>"+"Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3+"<br>";
+    document.getElementById("show").innerHTML+= "<br>"+"REGISTERED USER NO:"+j+"<br>"+"Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3+"<br>";
     document.getElementById("show").innerHTML+= "DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+users[j].n6+":"+users[j].n7+"<br>"+"Mobile: "+users[j].n8+"<br>";
     document.getElementById("show").innerHTML+= "PG Percentage:"+users[j].n10+"<br>"+"PG Year:"+users[j].n11+"<br>"+"UG Percentage:"+users[j].n12+"<br>"+"UG Year:"+users[j].n13+"<br>"; 
     document.getElementById("show").innerHTML+= "Higher Secondary Percentage:"+users[j].n14+"<br>"+"Higher Secondary Year:"+users[j].n15+"<br>";  
