@@ -1,171 +1,304 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script type="text/javascript" src="script.js"></script>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form type=post action="index.html" name="StudentRegistration" onsubmit="return(validate());">
+ 
+     <div class="container">
 
-<table cellpadding="2" width="20%" bgcolor="99FFFF" align="center"
-cellspacing="2">
+    <form class="well form-horizontal" type=post action="index.html" name="StudentRegistration" onsubmit="return(validate());" >
+<fieldset>
 
-<tr>
-<td colspan=2>
-<center><font size=4><b>Student Registration Form</b></font></center>
-</td>
-</tr>
+<!-- Form Name -->
+<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
 
-<tr>
-<td>Name</td>
-<td><input type=text name=textname id="textname" size="30"></td>
-</tr>
+<!-- Text input-->
 
-<tr>
-<td>Last Name</td>
-<td><input type="text" name="lastname" id="lastname"
-size="30"></td>
-</tr>
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type=text name=textname id="textname" placeholder="First Name" class="form-control">
+    </div>
+  </div>
+</div>
 
-<tr>
-<td>Sex</td>
-<td><input type="radio" name="sex" value="male" size="10">Male
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="lastname" id="lastname" placeholder="Last Name" class="form-control"  >
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Gender</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input type="radio" name="sex" value="male" size="10">Male
 <input type="radio" name="sex" value="Female" size="10">Female
 <input type="radio" name="sex" value="Trans" size="10">Trans
-</td>
-</tr>
+    </div>
+  </div>
+</div>
 <input type="hidden" name="gender" id="e1">
-<tr>
-<td>EmailId</td>
-<td><input type="text" name="emailid" id="emailid" size="30"></td>
-</tr>
 
-<tr>
-<td>DOB</td>
-<td><input type="text" name="dob" id="dob" size="30"></td>
-</tr>
+<!-- Text input-->
 
-
-  
-<tr>
-<td>MobileNo</td>
-<td><input type="text" name="mobileno" id="mobileno" size="30"></td>
-</tr>
-  
- <tr>
-<td>Password</td>
-<td><input type="password" name="password" id="password" size="30"></td>
-</tr>
-  
-  <tr>
-<td>PG</td>
-<td><input type="text" name="pg1" id="pg1" size="30"></td>
-<td><input type="text" name="pg2" id="pg2" size="30"></td>
-</tr>
-
-<tr>
-<td>UG</td>
-<td><input type="text" name="ug1" id="ug1" size="30"></td>
-<td><input type="text" name="ug2" id="ug2" size="30"></td>
-</tr>
-
-<tr>
-<td>School</td>
-<td><input type="text" name="sc1" id="sc1" size="30"></td>
-<td><input type="text" name="sc2" id="sc2" size="30"></td>
-</tr>
-  
-  <tr>
-<td>Experience</td>
-<td><input type="text" name="exp" id="exp" size="30"></td>
-</tr>
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <input type="text" name="emailid" id="emailid" placeholder="E-Mail Address" class="form-control">
+    </div>
+  </div>
+</div>
 
 
-<tr>
-<td>Primary Skills</td>
-<td><input type="text" name="ps" id="ps" size="30"></td>
-</tr>
+<div class="form-group">
+  <label class="col-md-4 control-label" >DOB</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="dob" id="dob" placeholder="dd-mm-yyyy" class="form-control" >
+   </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Contact No.</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <input type="text" name="mobileno" id="mobileno" placeholder="(639)" class="form-control" >
+    </div>
+  </div>
+</div>
 
 
 
-<tr>
-<td>Secondary Skills</td>
-<td><input type="text" name="ss" id="ss" size="30"></td>
-</tr>
+<div class="form-group">
+  <label class="col-md-4 control-label" >Password</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="password" name="password" id="password" placeholder="Password" class="form-control"  >
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Post Graduation</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="pg1" id="pg1" placeholder="percentage" class="form-control">
+  <input type="text" name="pg2" id="pg2" placeholder="Year" class="form-control">
+    </div>
+  </div>
+</div>
 
 
+<div class="form-group">
+  <label class="col-md-4 control-label">Under Graduation</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="ug1" id="ug1" placeholder="percentage" class="form-control">
+  <input type="text" name="ug2" id="ug2" placeholder="Year" class="form-control">
+    </div>
+  </div>
+</div>
 
-<tr>
-<td>Current ctc</td>
-<td><input type="text" name="cc" id="cc" size="30"></td>
-</tr>
+<div class="form-group">
+  <label class="col-md-4 control-label">Higher Secondary</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="sc1" id="sc1" placeholder="percentage" class="form-control">
+  <input type="text" name="sc2" id="sc2" placeholder="Year" class="form-control">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Experience</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="exp" id="exp" placeholder="Experience in years" class="form-control" >
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Primary Skills</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="ps" id="ps"  class="form-control" >
+   </div>
+  </div>
+</div>
 
 
-
-<tr>
-<td>Expected ctc</td>
-<td><input type="text" name="ec" id="ec" size="30"></td>
-</tr>
-  
-<tr>
-<td>Reason for change</td>
-<td><input type="text" name="reason" id="reason" size="30"></td>
-</tr>
-
+<div class="form-group">
+  <label class="col-md-4 control-label">Secondary Skills</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="ss" id="ss"  class="form-control" >
+    </div>
+  </div>
+</div>
 
 
-<tr>
-<td>Notice period</td>
-<td><input type="text" name="notice" id="notice" size="30"></td>
-</tr>
+<div class="form-group">
+  <label class="col-md-4 control-label">Current Ctc</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="cc" id="cc"  class="form-control" >
 
-<tr>
-<td>Are you serving notice</td>
-<td><input type="radio" name="sn" id="sn" size="30" value="yes">YES</td>
-<td><input type="radio" name="sn" id="sn" size="30" value="no">NO</td>
-</tr>
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Expected Ctc</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="ec" id="ec"  class="form-control" >
+
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Reason for change</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="reason" id="reason"  class="form-control" >
+
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Notice Period</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="notice" id="notice"  class="form-control" >
+
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Are you serving notice</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input type="radio" name="sn" id="sn" size="30" value="yes">YES
+  <input type="radio" name="sn" id="sn" size="30" value="no">NO
+    </div>
+  </div>
+</div>
 
 <input type="hidden" name="e3" id="e3">
 
-<tr>
-<td>Current Location</td>
-<td><input type="text" name="cl" id="cl" size="30"></td>
-</tr>
+<div class="form-group">
+  <label class="col-md-4 control-label">Current Location</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="cl" id="cl"  class="form-control" >
+
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Preferred Location</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="pl" id="pl"  class="form-control" >
+
+    </div>
+  </div>
+</div>
 
 
-<tr>
-<td>Preferred location</td>
-<td><input type="text" name="pl" id="pl" size="30"></td>
-</tr>
-
-
-  
-  <tr>
-<td>Pan/Aadhar/Passport</td>
-<td><input type="radio" name="val" value="pan" size="10">Pan
+<div class="form-group">
+  <label class="col-md-4 control-label">Pan/Aadhar/Passport</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+<input type="radio" name="val" value="pan" size="10">Pan
 <input type="radio" name="val" value="aadhar" size="10">Aadhar
 <input type="radio" name="val" value="passport" size="10">Passport
-</td>
-</tr>
+  </div>
+  </div>
+</div>
 
-<tr>
-<td>Input</td>
-<td><input type="text" name="panid" id="panid" size="30"></td>
-</tr>
-  
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Enter the value</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input type="text" name="panid" id="panid"  class="form-control" >
+  </div>
+  </div>
+</div>
+
 <input type="hidden" name="pan" id="e2">
-  
-<tr>
-<td><input type="checkbox" name="agree" id="agree" size="10"></td>
-<td>I agree to terms and conditions</td>
-</tr>
- 
-  
-<td><input type="reset"></td>
-<td colspan="2"><input type="submit" value="Submit Form" /></td>
-</tr>
-</table>
-</form>
 
-<div id="show"></div>
-</body>
-</html>
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <input type="checkbox" name="agree" id="agree" size="10">I Agree to the terms and conditions
+  </div>
+  </div>
+</div>
+
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" class="btn btn-warning" name="sub" id="sub" value="Submit Form" >
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container --> 
+  
+  </body>
+  </html>
