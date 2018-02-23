@@ -93,6 +93,44 @@ function validate()
     }
    
    
+   if( document.StudentRegistration.pg1.value === "" )
+   {
+     alert( "Please provide PG percentage!" );
+     document.StudentRegistration.pg1.focus() ;
+     return false;
+   }
+   if( document.StudentRegistration.pg2.value === "" )
+   {
+     alert( "Please provide PG passing year!" );
+     document.StudentRegistration.pg2.focus() ;
+     return false;
+   }
+   if( document.StudentRegistration.ug1.value === "" )
+   {
+     alert( "Please provide UG percentage!" );
+     document.StudentRegistration.ug1.focus() ;
+     return false;
+   }
+   if( document.StudentRegistration.ug2.value === "" )
+   {
+     alert( "Please provide UG year!" );
+     document.StudentRegistration.ug2.focus() ;
+     return false;
+   }
+   if( document.StudentRegistration.sc1.value === "" )
+   {
+     alert( "Please provide Higher Secondary percentage!" );
+     document.StudentRegistration.sc1.focus() ;
+     return false;
+   }
+   if( document.StudentRegistration.sc2.value === "" )
+   {
+     alert( "Please provide Higher Secondary Passing year!" );
+     document.StudentRegistration.sc2.focus() ;
+     return false;
+   }
+   
+   
    
    if ( ( StudentRegistration.val[0].checked === false ) && ( StudentRegistration.val[1].checked === false ) && ( StudentRegistration.val[2].checked === false ))
    {
