@@ -85,12 +85,12 @@ function func()
  var y = document.getElementById("password").value;
  var flag=0;
 users = JSON.parse(localStorage.getItem("users") || "[]");
-for(i=0;i<users.length;i++)
+for(i=1;i<users.length;i++)
 {
 if(users[i].n3 == x && users[i].n9 == y)
 {
   flag=1;
-  for(j=0;j<users.length;j++)
+  for(j=1;j<users.length;j++)
   {
      if(users[j].n1!==null && users[j].n2!==null && users[j].n3!==null && users[j].n4!==null && users[j].n5!==null && users[j].n6!==null && users[j].n7!==null && users[j].n8!==null && users[j].n9!==null && users[j].n10!==null && users[j].n11!==null && users[j].n12!==null && users[j].n13!==null && users[j].n14!==null && users[j].n15!==null && users[j].n16!==null && users[j].n17!==null && users[j].n18!==null && users[j].n19!==null && users[j].n20!==null && users[j].n21!==null && users[j].n22!==null && users[j].n23!==null && users[j].n24!==null && users[j].n25!==null)
      {
