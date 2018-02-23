@@ -69,6 +69,30 @@ function validate()
      document.StudentRegistration.dob.focus() ;
      return false;
    }
+     
+  if( document.StudentRegistration.mobileno.value === "" ||
+           isNaN( document.StudentRegistration.mobileno.value) ||
+           document.StudentRegistration.mobileno.value.length != 10 )
+   {
+     alert( "Please provide a Mobile No in the format 123." );
+     document.StudentRegistration.mobileno.focus() ;
+     return false;
+   }
+   
+   if( StudentRegistration.password.value === "" )
+   {
+     alert( "Password can't be empty!" );
+     document.StudentRegistration.password.focus() ;
+     return false;
+   }
+   if (document.StudentRegistration.password.value.match(/^(.{0,7}|[^0-9]*|[^A-Z]*|[a-zA-Z0-9]*)$/))
+        {
+       alert( "Password should consist of min 8 characters including 1 uppercase and 1 symbol" );
+     document.StudentRegistration.password.focus() ;
+    return false;  
+    }
+   
+   
    
    if ( ( StudentRegistration.val[0].checked === false ) && ( StudentRegistration.val[1].checked === false ) && ( StudentRegistration.val[2].checked === false ))
    {
@@ -78,48 +102,41 @@ function validate()
    
    if ( ( StudentRegistration.val[0].checked === true ))
    {
-   var x = StudentRegistration.panid.value;
-   var regpan = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-   if(regpan.test(panVal))
+     document.getElementById("e2").value = StudentRegistration.val[0].value;
+     
+    if(!(StudentRegistration.panid.value.match(/^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/)))
    {
-   document.getElementById("e2").value = StudentRegistration.val[0].value;
+   alert("Please enter correct Pan number");
+     return false;
     }
 
-   else
-    { alert("Please enter correct Pan number");
-     return false;}
    }  
    
    if ( ( StudentRegistration.val[1].checked === true ))
    {
    document.getElementById("e2").value = StudentRegistration.val[0].value;
+   if(!(StudentRegistration.panid.value.match(/^[2-9]{1}[0-9]{11}$/)))
+   { 
+     alert("Please enter correct Adhar number");
+     return false;
+   }
+   
    
    }   
    
    if ( ( StudentRegistration.val[2].checked === true ))
-   {
-   var regsaid = /[a-zA-Z]{2}[0-9]{7}/;
-   var pass = StudentRegistration.panid.value;
-        if(regsaid.test(pass))
-        {
-            document.getElementById("e2").value = StudentRegistration.val[2].value;
-        }
-        else
+   {document.getElementById("e2").value = StudentRegistration.val[2].value;
+   
+        if(!(StudentRegistration.panid.value.match(/[a-zA-Z]{1}[0-9]{7}/)))
         {
             alert("Please enter correct Passport number");
            return false;
         }
+        
    
-   }   
+   }  
    
-  if( document.StudentRegistration.mobileno.value === "" ||
-           isNaN( document.StudentRegistration.mobileno.value) ||
-           document.StudentRegistration.mobileno.value.length != 10 )
-   {
-     alert( "Please provide a Mobile No in the format 123." );
-     document.StudentRegistration.mobileno.focus() ;
-     return false;
-   }
+   
    return( true );
 }
 
