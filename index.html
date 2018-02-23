@@ -53,6 +53,12 @@ ps = unescape(params["ps"]);
 ss = unescape(params["ss"]);
 cc = unescape(params["cc"]);
 ec = unescape(params["ec"]);
+reason = unescape(params["reason"]);
+notice = unescape(params["notice"]);
+e3 = unescape(params["e3"]);
+cl = unescape(params["cl"]);
+pl = unescape(params["pl"]);
+
 
 
 function html5_storage_support() {
@@ -66,7 +72,7 @@ function html5_storage_support() {
 	if (html5_storage_support()) {
   			//get the user-entered values from the two text fields:
   			
-        var arr = {n1:firstname,n2:lastname,n3:emailid,n4:dob,n5:gender,n6:pan,n7:panid,n8:mobile,n9:pass,n10:pg1,n11:pg2,n12:ug1,n13:ug2,n14:sc1,n15:sc2,n16:exp,n17:ps,n18:ss,n19:cc,n20:ec};
+        var arr = {n1:firstname,n2:lastname,n3:emailid,n4:dob,n5:gender,n6:pan,n7:panid,n8:mobile,n9:pass,n10:pg1,n11:pg2,n12:ug1,n13:ug2,n14:sc1,n15:sc2,n16:exp,n17:ps,n18:ss,n19:cc,n20:ec,n21:reason,n22:notice,n23:e3,n24:cl,n25:pl};
   			//create two local-storage keys (name1, name2) and assign
   			//each the respective value from the text fields:
   			users = JSON.parse(localStorage.getItem("users") || "[]");
@@ -79,22 +85,23 @@ function func()
  var y = document.getElementById("password").value;
  var flag=0;
 users = JSON.parse(localStorage.getItem("users") || "[]");
-for(i=1;i<users.length;i++)
+for(i=0;i<users.length;i++)
 {
 if(users[i].n3 == x && users[i].n9 == y)
 {
   flag=1;
-  for(j=1;j<users.length;j++)
+  for(j=0;j<users.length;j++)
   {
-     if(users[j].n1!==null && users[j].n2!==null && users[j].n3!==null && users[j].n4!==null && users[j].n5!==null && users[j].n6!==null && users[j].n7!==null && users[j].n8!==null && users[j].n9!==null && users[j].n10!==null && users[j].n11!==null && users[j].n12!==null && users[j].n13!==null && users[j].n14!==null && users[j].n15!==null && users[j].n16!==null && users[j].n17!==null && users[j].n18!==null && users[j].n19!==null && users[j].n20!==null)
+     if(users[j].n1!==null && users[j].n2!==null && users[j].n3!==null && users[j].n4!==null && users[j].n5!==null && users[j].n6!==null && users[j].n7!==null && users[j].n8!==null && users[j].n9!==null && users[j].n10!==null && users[j].n11!==null && users[j].n12!==null && users[j].n13!==null && users[j].n14!==null && users[j].n15!==null && users[j].n16!==null && users[j].n17!==null && users[j].n18!==null && users[j].n19!==null && users[j].n20!==null && users[j].n21!==null && users[j].n22!==null && users[j].n23!==null && users[j].n24!==null && users[j].n25!==null)
      {
-    document.getElementById("show").innerHTML+= "<br>"+"Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3+"<br>";
+    document.getElementById("show").innerHTML+= "<br>"+"REGISTERED USER NO:"+j+1+"<br>"+"Firstname: "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3+"<br>";
     document.getElementById("show").innerHTML+= "DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+users[j].n6+":"+users[j].n7+"<br>"+"Mobile: "+users[j].n8+"<br>";
     document.getElementById("show").innerHTML+= "PG Percentage:"+users[j].n10+"<br>"+"PG Year:"+users[j].n11+"<br>"+"UG Percentage:"+users[j].n12+"<br>"+"UG Year:"+users[j].n13+"<br>"; 
     document.getElementById("show").innerHTML+= "Higher Secondary Percentage:"+users[j].n14+"<br>"+"Higher Secondary Year:"+users[j].n15+"<br>";  
     document.getElementById("show").innerHTML+= "Experience:"+users[j].n16+"<br>"+"Primary skills:"+users[j].n17+"<br>"+"Secondary skills:"+users[j].n18+"<br>";
     document.getElementById("show").innerHTML+= "Current ctc:"+users[j].n19+"<br>"+"Expected ctc:"+users[j].n20+"<br>";   
-	     
+    document.getElementById("show").innerHTML+=  "Reason for change:"+users[j].n21+"<br>"+"Notice period:"+users[j].n22+"<br>";
+    document.getElementById("show").innerHTML+=  "Are you serving notice:"+users[j].n23+"<br>"+"Current location:"+users[j].n24+"<br>"+"Preferred Location:"+users[j].n25+"<br>"+"<br>"+"<br>";
      }
 else{j++;}
   }
