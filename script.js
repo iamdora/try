@@ -177,7 +177,51 @@ if( StudentRegistration.ec.value === "" )
     return false;  
     }
    
+   if( document.StudentRegistration.reason.value === "" )
+   {
+     alert( "Please provide reason for change!" );
+     document.StudentRegistration.reason.focus() ;
+     return false;
+   }
    
+   if( document.StudentRegistration.notice.value === "" )
+   {
+     alert( "Please provide notice period!" );
+     document.StudentRegistration.notice.focus() ;
+     return false;
+   }
+   
+   if ( ( StudentRegistration.sn[0].checked === false ) && ( StudentRegistration.sn[1].checked === false ) )
+   {
+   alert ( "You have to check yes or no for serving notice" );
+  
+   return false;
+   } 
+   
+   if ( ( StudentRegistration.sn[0].checked === true )  )
+   {
+   document.getElementById("e3").value = StudentRegistration.sn[0].value;
+   } 
+   
+   if ( ( StudentRegistration.sn[1].checked === true )  )
+   {
+   document.getElementById("e3").value = StudentRegistration.sn[1].value;
+   } 
+  
+   
+   if( document.StudentRegistration.cl.value === "" )
+   {
+     alert( "Please provide your current location!" );
+     document.StudentRegistration.cl.focus() ;
+     return false;
+   }
+   
+   if( document.StudentRegistration.pl.value === "" )
+   {
+     alert( "Please provide your preferred location!" );
+     document.StudentRegistration.pl.focus() ;
+     return false;
+   }
    
    if ( ( StudentRegistration.val[0].checked === false ) && ( StudentRegistration.val[1].checked === false ) && ( StudentRegistration.val[2].checked === false ))
    {
@@ -220,6 +264,13 @@ if( StudentRegistration.ec.value === "" )
         
    
    }  
+   
+   if( StudentRegistration.agree.checked === false )
+   {
+     alert( "Agree to terms and conditions" );
+     return false;
+   }
+   
    
    
    return( true );
