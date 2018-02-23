@@ -130,6 +130,53 @@ function validate()
      return false;
    }
    
+   if( document.StudentRegistration.exp.value === "" )
+   {
+     alert( "Please Enter your experience in years" );
+     document.StudentRegistration.exp.focus() ;
+     return false;
+   }
+   
+   if( document.StudentRegistration.ps.value === "" )
+   {
+     alert( "Please Enter your Primary skills!" );
+     document.StudentRegistration.ps.focus() ;
+     return false;
+   }
+   if( document.StudentRegistration.ss.value === "" )
+   {
+     alert( "Please Enter your secondary skills!" );
+     document.StudentRegistration.ss.focus() ;
+     return false;
+   }
+   
+   if( StudentRegistration.cc.value === "" )
+   {
+     alert( "Current ctc can't be empty!" );
+     document.StudentRegistration.cc.focus() ;
+     return false;
+   }
+   if (!(StudentRegistration.cc.value.match(/^[-+]?[0-9]+\.[0-9]+$/))) 
+        {
+       alert( "current ctc value should be decimal" );
+     document.StudentRegistration.cc.focus() ;
+    return false;  
+    }
+    
+//EXPECTED CTC
+if( StudentRegistration.ec.value === "" )
+   {
+     alert( "Expected ctc can't be empty!" );
+     document.StudentRegistration.ec.focus() ;
+     return false;
+   }
+   if (!(StudentRegistration.ec.value.match(/^[-+]?[0-9]+\.[0-9]+$/))) 
+        {
+       alert( "expected ctc should be in decimal" );
+     document.StudentRegistration.ec.focus() ;
+    return false;  
+    }
+   
    
    
    if ( ( StudentRegistration.val[0].checked === false ) && ( StudentRegistration.val[1].checked === false ) && ( StudentRegistration.val[2].checked === false ))
