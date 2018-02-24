@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+ .topcorner{
+   position:absolute;
+   top:0;
+   right:0;
+  }
+</style>
+</head>
+<body>
+  
+<div id="show"></div>
+<div class="topcorner"><a href="index.html" class="btn btn-default" >Logout</a></div>
+  
+<script>
+users = JSON.parse(localStorage.getItem("users") || "[]");
+for(j=1;j<users.length;j++)
+  {
+     if(users[j].n1!=="undefined")
+     {
+    document.getElementById("show").innerHTML+= "<br>"+"REGISTERED USER:  "+users[j].n1+"<br>"+"Lastname: "+users[j].n2+"<br>"+"Email Id: "+users[j].n3+"<br>";
+    document.getElementById("show").innerHTML+= "DOB : "+users[j].n4+"<br>"+"Gender: "+users[j].n5+"<br>"+users[j].n6+":"+users[j].n7+"<br>"+"Mobile: "+users[j].n8+"<br>";
+    document.getElementById("show").innerHTML+= "PG Percentage:"+users[j].n10+"<br>"+"PG Year:"+users[j].n11+"<br>"+"UG Percentage:"+users[j].n12+"<br>"+"UG Year:"+users[j].n13+"<br>"; 
+    document.getElementById("show").innerHTML+= "Higher Secondary Percentage:"+users[j].n14+"<br>"+"Higher Secondary Year:"+users[j].n15+"<br>";  
+    document.getElementById("show").innerHTML+= "Experience:"+users[j].n16+"<br>"+"Primary skills:"+users[j].n17+"<br>"+"Secondary skills:"+users[j].n18+"<br>";
+    document.getElementById("show").innerHTML+= "Current ctc:"+users[j].n19+"<br>"+"Expected ctc:"+users[j].n20+"<br>";   
+    document.getElementById("show").innerHTML+=  "Reason for change:"+users[j].n21+"<br>"+"Notice period:"+users[j].n22+"<br>";
+    document.getElementById("show").innerHTML+=  "Are you serving notice:"+users[j].n23+"<br>"+"Current location:"+users[j].n24+"<br>"+"Preferred Location:"+users[j].n25+"<br>"+"<br>"+"<br>";
+     }
+else{j++;}
+  }
+  
+  </script>
