@@ -1,4 +1,6 @@
 // Code goes here
+
+// Code goes here
 // Code goes here
 
 // Code goes here
@@ -70,11 +72,9 @@ function validate()
      return false;
    }
      
-  if( document.StudentRegistration.mobileno.value === "" ||
-           isNaN( document.StudentRegistration.mobileno.value) ||
-           document.StudentRegistration.mobileno.value.length != 10 )
+  if( document.StudentRegistration.mobileno.value === "")
    {
-     alert( "Please provide a Mobile No in the format 123." );
+     alert( "Please provide a Mobile No" );
      document.StudentRegistration.mobileno.focus() ;
      return false;
    }
@@ -271,7 +271,7 @@ if( StudentRegistration.ec.value === "" )
      return false;
    }
    
-   
+   alert("Registration Successful");
    
    return( true );
 }
