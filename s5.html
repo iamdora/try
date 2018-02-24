@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
 </head>
 <body>
  
@@ -53,7 +55,7 @@
   <div class="input-group">
   <input type="radio" name="sex" value="male" size="10">Male
 <input type="radio" name="sex" value="Female" size="10">Female
-<input type="radio" name="sex" value="Trans" size="10">Trans
+<input type="radio" name="sex" value="Trans" size="10">Other
     </div>
   </div>
 </div>
@@ -87,7 +89,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-        <input type="text" name="mobileno" id="mobileno" placeholder="(639)" class="form-control" >
+        <input type="text" name="mobileno" id="mobileno" placeholder="xxx-xxxx-xxxx" class="form-control" onkeypress="return numberPressed(event);" >
     </div>
   </div>
 </div>
@@ -220,13 +222,18 @@
   <label class="col-md-4 control-label">Are you serving notice</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <input type="radio" name="sn" id="sn" size="30" value="yes">YES
-  <input type="radio" name="sn" id="sn" size="30" value="no">NO
+  <input type="radio" name="sn" id="sn" size="30" value="yes" onclick="myfunc();">YES
+  <input type="radio" name="sn" id="sn" size="30" value="no" onclick="myfunc2();" >NO
     </div>
   </div>
 </div>
 
-<input type="hidden" name="e3" id="e3">
+<div id="ifYes" style="visibility:hidden">
+        If yes, explain: <input type='text' id="e3" name="e3" >
+        
+    </div>
+
+<br>
 
 <div class="form-group">
   <label class="col-md-4 control-label">Current Location</label>  
@@ -299,6 +306,61 @@
 </form>
 </div>
     </div><!-- /.container --> 
+    
+    <script>
+    
+    // Format the phone number as the user types it
+document.getElementById('mobileno').addEventListener('keyup',function(evt){
+        var phoneNumber = document.getElementById('mobileno');
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        phoneNumber.value = phoneFormat(phoneNumber.value);
+});
+
+// We need to manually format the phone number on page load
+document.getElementById('mobileno').value = phoneFormat(document.getElementById('mobileno').value);
+
+// A function to determine if the pressed key is an integer
+function numberPressed(evt){
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
+                return false;
+        }
+        return true;
+}
+
+// A function to format text to look like a phone number
+function phoneFormat(input){
+        // Strip all characters from the input except digits
+        input = input.replace(/\D/g,'');
+        
+        // Trim the remaining input to ten characters, to preserve phone number format
+        input = input.substring(0,10);
+
+        // Based upon the length of the string, we add formatting as necessary
+        var size = input.length;
+        if(size == 0){
+                input = input;
+        }else if(size < 4){
+                input = '('+input;
+        }else if(size < 7){
+                input = '('+input.substring(0,3)+') '+input.substring(3,6);
+        }else{
+                input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
+        }
+        return input; 
+}
+
+function myfunc()
+{ 
+  document.getElementById('ifYes').style.visibility = 'visible';
+  
+}
+
+function myfunc2()
+{
+  document.getElementById('ifYes').style.visibility = 'hidden';
+}
+  </script>
   
   </body>
   </html>
